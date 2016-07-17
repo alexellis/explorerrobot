@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import time
 from motors import Motors
 from wiimotereader import WiimoteReader
@@ -14,10 +16,9 @@ class Robot:
         last = None
         while(self.live == True):
             cmd = reader.read()
-            if(cmd != last):
-                last = cmd
-                self.live = cmd.Execute(self.motors, self.move_delay, self.turn_delay)
-            time.sleep(0.1)
+            last = cmd
+            self.live = cmd.Execute(self.motors, self.move_delay, self.turn_delay)
+            time.sleep(0.2)
 
 reader = WiimoteReader()
 robot = Robot(reader)
