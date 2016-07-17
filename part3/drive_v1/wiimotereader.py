@@ -13,6 +13,8 @@ class WiimoteReader:
             command = Forwards()
         elif buttons & cwiid.BTN_B:
             command = Backwards()
+        elif buttons & cwiid.BTN_LEFT:
+            command = Left()
         else:
             command = Stop()
 
