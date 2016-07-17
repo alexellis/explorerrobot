@@ -11,6 +11,9 @@ class WiimoteReader:
         command = None
         if buttons & cwiid.BTN_A:
             command = Forwards()
-        if buttons & cwiid.BTN_B:
+        elif buttons & cwiid.BTN_B:
             command = Backwards()
+        else:
+            command = Stop()
+
         return command

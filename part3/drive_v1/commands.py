@@ -1,4 +1,16 @@
 
+class Stop:
+    def Execute(self, motors, move_delay, turn_delay):
+        motors.stop()
+        return True
+
+class Backwards:
+    def Execute(self, motors, move_delay, turn_delay):
+        motors.backwards()
+        time.sleep(move_delay)
+        motors.stop()
+        return True
+
 class Forwards:
     def Execute(self, motors, move_delay, turn_delay):
         motors.forwards()
