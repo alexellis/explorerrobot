@@ -7,19 +7,19 @@ move_delay = 1
 turn_delay = 0.5
 
 def evaluate(line):
-    if(line == "f"):
+    if(line == "w"):
         motors.forwards()
         time.sleep(move_delay)
         motors.stop()
-    if(line == "l"):
+    if(line == "a"):
         motors.left()
         time.sleep(turn_delay)
         motors.stop()
-    if(line == "b"):
+    if(line == "s"):
         motors.backwards()
         time.sleep(move_delay)
         motors.stop()
-    if(line == "r"):
+    if(line == "d"):
         motors.right()
         time.sleep(turn_delay)
         motors.stop()
@@ -29,4 +29,3 @@ while(last != 'q'):
     sys.stdout.flush()
     last = raw_input()
     evaluate(last)
-
