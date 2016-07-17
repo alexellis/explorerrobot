@@ -1,4 +1,4 @@
-import time
+mport time
 from motors_v1 import Motors
 
 motors = Motors()
@@ -8,6 +8,5 @@ time.sleep(1)
 motors.stop()
 time.sleep(1)
 motors.backwards()
-motors.stop()
 time.sleep(1)
-
+motors.stop()
