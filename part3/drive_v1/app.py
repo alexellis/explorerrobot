@@ -17,7 +17,7 @@ class Robot:
             if(cmd != last):
                 last = cmd
                 self.live = cmd.Execute(self.motors, self.move_delay, self.turn_delay)
-            time.sleep(0.025)
+            time.sleep(0.1)
 
 reader = WiimoteReader()
 robot = Robot(reader)
