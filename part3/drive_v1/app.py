@@ -11,9 +11,12 @@ class Robot:
         self.motors = Motors()
 
     def control_loop(self):
+        last = None
         while(self.live == True):
             cmd = reader.read()
-            self.live = cmd.Execute(self.motors, self.move_delay, self.turn_delay)
+            if(cmd != last):
+                last = cmd
+                self.live = cmd.Execute(self.motors, self.move_delay, self.turn_delay)
             time.sleep(0.025)
 
 reader = WiimoteReader()
