@@ -1,4 +1,4 @@
-mport time
+import time
 from motors_v1 import Motors
 
 motors = Motors()
