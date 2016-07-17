@@ -1,4 +1,6 @@
 import time
+from wiimotereader import WiimoteReader
+
 reader = WiimoteReader()
 while(True):
     cmd = reader.read()
