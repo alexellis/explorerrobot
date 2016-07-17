@@ -14,8 +14,6 @@ class Motors:
   def left(self):
       explorerhat.motor.one.backwards()
       explorerhat.motor.two.forwards()
-  def left(self):
+  def right(self):
       explorerhat.motor.one.forwards()
       explorerhat.motor.two.backwards()
-
-
