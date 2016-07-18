@@ -9,12 +9,15 @@ class WiimoteReader:
     def read(self):
         buttons = self.wii.state['buttons']
         command = None
+
         if buttons & cwiid.BTN_A:
             command = Forwards()
         elif buttons & cwiid.BTN_B:
             command = Backwards()
         elif buttons & cwiid.BTN_LEFT:
             command = Left()
+        elif buttons & cwiid.BTN_HOME:
+            command = Shutdown()
         else:
             command = Stop()
 

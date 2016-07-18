@@ -1,4 +1,10 @@
 import time
+import os
+
+class Shutdown:
+    def Execute(self, motors, move_delay, turn_delay):
+        os.system("sudo halt")
+        return False
 
 class Stop:
     def Execute(self, motors, move_delay, turn_delay):
