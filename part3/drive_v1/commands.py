@@ -27,7 +27,7 @@ class Forwards:
 
 class Right:
     def Execute(self, motors, move_delay, turn_delay):
-        motors.left()
+        motors.right()
         time.sleep(turn_delay)
         motors.stop()
         return True

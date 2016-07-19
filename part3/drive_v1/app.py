@@ -8,8 +8,8 @@ class Robot:
     def __init__(self, reader):
         self.reader = reader
         self.live = True
-        self.move_delay = 0.7
-        self.turn_delay = 0.25
+        self.move_delay = 0.6
+        self.turn_delay = 0.2
         self.motors = Motors()
 
     def control_loop(self):
