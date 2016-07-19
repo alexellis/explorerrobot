@@ -56,8 +56,8 @@ class TerminalReader:
 
 class Robot:
     def __init__(self):
-        self.move_delay = 1
-        self.turn_delay = 0.5
+        self.move_delay = 0.6
+        self.turn_delay = 0.2
         self.terminalReader = TerminalReader()
         self.motors = Motors()
 
