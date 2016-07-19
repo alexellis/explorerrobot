@@ -1,10 +1,27 @@
 import sys, time
 from motors_v1 import Motors
 
+import time
+import os
+
+class Backwards:
+    def Execute(self, motors, move_delay, turn_delay):
+        motors.backwards()
+        time.sleep(move_delay)
+        motors.stop()
+        return True
+
 class Forwards:
     def Execute(self, motors, move_delay, turn_delay):
         motors.forwards()
         time.sleep(move_delay)
+        motors.stop()
+        return True
+
+class Right:
+    def Execute(self, motors, move_delay, turn_delay):
+        motors.left()
+        time.sleep(turn_delay)
         motors.stop()
         return True
 
@@ -28,9 +45,13 @@ class TerminalReader:
     def parse(self, line):
         if(line=="w"):
             return Forwards()
-        if(line=="d"):
+        elif(line=="s"):
+            return Backwards()
+        elif(line=="d"):
+            return Right()
+        elif(line=="a"):
             return Left()
-        if(line=="q"):
+        elif(line=="q"):
             return Quit()
 
 class Robot:
