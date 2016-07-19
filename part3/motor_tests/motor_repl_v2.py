@@ -20,7 +20,7 @@ class Forwards:
 
 class Right:
     def Execute(self, motors, move_delay, turn_delay):
-        motors.left()
+        motors.right()
         time.sleep(turn_delay)
         motors.stop()
         return True
@@ -45,19 +45,19 @@ class TerminalReader:
     def parse(self, line):
         if(line=="w"):
             return Forwards()
+        elif(line=="a"):
+            return Left()
         elif(line=="s"):
             return Backwards()
         elif(line=="d"):
             return Right()
-        elif(line=="a"):
-            return Left()
         elif(line=="q"):
             return Quit()
 
 class Robot:
     def __init__(self):
         self.move_delay = 0.6
-        self.turn_delay = 0.2
+        self.turn_delay = 0.05
         self.terminalReader = TerminalReader()
         self.motors = Motors()
 
