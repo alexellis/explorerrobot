@@ -1,10 +1,11 @@
-# Copyright Alex Ellis 2016
-# License: MIT
-
 import RPi.GPIO as GPIO
 import time
 
-class ultrasonic:
+# trigger = output 1 on ExporerHAT
+# echo = input 1 on ExporerHAT
+# For other output or inputs consult http://pinout.xyz
+
+class ultrasonic_sensor:
 	def __init__(self,trigger,echo):
 		self.GPIO_ECHO=echo
 		self.GPIO_TRIGGER=trigger
@@ -45,9 +46,7 @@ class ultrasonic:
 		# That was the distance there and back so halve the value
 		distance = distance / 2
 
-		#print "Distance : %.1f" % distance
 		return distance
 
 	def cleanup(self):
 		GPIO.cleanup()
-
